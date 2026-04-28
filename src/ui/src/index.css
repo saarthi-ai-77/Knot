@@ -1,0 +1,162 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@600;700;800&display=swap');
+
+@theme {
+  /* Custom Knot colors */
+  --color-knot-bg: #0a0a0f;
+  --color-knot-panel: #0d1117;
+  --color-knot-panel-hover: #161b22;
+  --color-knot-border: #1e2433;
+  --color-knot-cyan: #00d4ff;
+  --color-knot-cyan-dim: rgba(0, 212, 255, 0.06);
+  --color-knot-amber: #f59e0b;
+  --color-knot-emerald: #10b981;
+  --color-knot-red: #ef4444;
+  --color-knot-purple: #a855f7;
+  --color-knot-muted: #6b7280;
+  --color-knot-text: #9ca3af;
+  --color-knot-text-bright: #e5e7eb;
+
+  /* Custom fonts */
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+  --font-heading: 'Syne', system-ui, sans-serif;
+}
+
+/* Base styles */
+@layer base {
+  * {
+    border-color: var(--color-knot-border);
+  }
+  
+  html {
+    background-color: var(--color-knot-bg);
+    color: var(--color-knot-text);
+  }
+  
+  body {
+    background-color: var(--color-knot-bg);
+    color: var(--color-knot-text);
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+  }
+}
+
+/* Typography utilities */
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.font-heading {
+  font-family: 'Syne', system-ui, sans-serif;
+}
+
+/* Code blocks */
+.code-block {
+  background-color: var(--color-knot-panel);
+  border: 1px solid var(--color-knot-border);
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* Glass effect for sidebars */
+.glass-panel {
+  background-color: rgba(13, 17, 23, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+/* Transition standard */
+.transition-knot {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 120ms;
+}
+
+/* Active nav item */
+.nav-active {
+  border-left: 2px solid var(--color-knot-cyan);
+  background-color: var(--color-knot-cyan-dim);
+  color: var(--color-knot-cyan);
+}
+
+/* Entity kind badges */
+.badge-function {
+  background-color: rgba(0, 212, 255, 0.1);
+  color: var(--color-knot-cyan);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.badge-class {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--color-knot-amber);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-interface {
+  background-color: rgba(168, 85, 247, 0.1);
+  color: var(--color-knot-purple);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.badge-import {
+  background-color: rgba(107, 114, 128, 0.2);
+  color: var(--color-knot-muted);
+  border: 1px solid var(--color-knot-border);
+}
+
+/* Agent type badges */
+.agent-claude {
+  background-color: rgba(168, 85, 247, 0.1);
+  color: var(--color-knot-purple);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.agent-cursor {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.agent-opencode {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--color-knot-amber);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.agent-copilot {
+  background-color: rgba(107, 114, 128, 0.2);
+  color: var(--color-knot-muted);
+  border: 1px solid var(--color-knot-border);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-knot-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-knot-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2e3441;
+}
+
+/* Animation */
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "knot",
+  "version": "0.1.0",
+  "description": "Local-first, AI-agnostic context management desktop app for agentic coding workflows",
+  "type": "module",
+  "scripts": {
+    "dev": "cd src/ui && npm run dev",
+    "build": "cd src/ui && npm run build",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build"
+  },
+  "keywords": [
+    "ai",
+    "context",
+    "code",
+    "knowledge-graph",
+    "tree-sitter",
+    "tauri"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0"
+  }
+}
